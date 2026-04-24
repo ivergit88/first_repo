@@ -1,0 +1,22 @@
+{
+  "name": "safe-notes",
+  "version": "1.0.0",
+  "description": "Small secure notes web app for a web security course",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "NODE_ENV=development node src/server.js",
+    "lint": "node scripts/lint.js",
+    "format:check": "node scripts/format-check.js",
+    "test": "node --test tests/*.test.js",
+    "build": "node scripts/build.js",
+    "security:semgrep:local": "node scripts/semgrep-local.js",
+    "sca:sbom": "node scripts/generate-sbom.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

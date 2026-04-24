@@ -1,0 +1,170 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #eef2ff;
+  color: #162033;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(91, 141, 239, 0.35), transparent 32rem),
+    linear-gradient(135deg, #f8fbff 0%, #eef2ff 100%);
+}
+
+button, input, select, textarea { font: inherit; }
+
+.shell {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #3f66d8;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 7vw, 5rem);
+  line-height: 0.95;
+}
+
+.hero p:last-child {
+  max-width: 620px;
+  color: #4d5b73;
+  font-size: 1.1rem;
+}
+
+.panel, .note {
+  border: 1px solid rgba(93, 107, 140, 0.18);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 70px rgba(31, 46, 85, 0.13);
+  backdrop-filter: blur(18px);
+}
+
+.panel {
+  padding: 24px;
+}
+
+.note-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.note-form label {
+  display: grid;
+  gap: 8px;
+  color: #4d5b73;
+  font-weight: 700;
+}
+
+.note-form label:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #c9d3ec;
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fff;
+  color: #162033;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #315bdc;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover { background: #2448b8; }
+
+.message { min-height: 1.5em; color: #5a6477; }
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.toolbar button {
+  background: #fff;
+  color: #315bdc;
+  border: 1px solid #c9d3ec;
+}
+
+.toolbar button.active {
+  background: #315bdc;
+  color: #fff;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.note {
+  padding: 20px;
+  border-top: 8px solid var(--note-color, #315bdc);
+}
+
+.note.done {
+  opacity: 0.7;
+}
+
+.note h3 {
+  margin: 0 0 10px;
+}
+
+.note p {
+  white-space: pre-wrap;
+  color: #4d5b73;
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.note-actions button:last-child {
+  background: #d82f56;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 24px;
+  border: 1px dashed #99a8ca;
+  border-radius: 20px;
+  color: #5a6477;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .note-form { grid-template-columns: 1fr; }
+}

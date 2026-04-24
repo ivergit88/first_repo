@@ -1,0 +1,15 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:db11631c-dd89-444c-a3f7-cecaed571021",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-04-24T15:22:09.777Z",
+    "component": {
+      "type": "application",
+      "name": "safe-notes",
+      "version": "1.0.0"
+    }
+  },
+  "components": []
+}
