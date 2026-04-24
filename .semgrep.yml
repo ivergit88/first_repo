@@ -1,0 +1,27 @@
+rules:
+  - id: javascript-no-inner-html-assignment
+    languages: [javascript]
+    severity: ERROR
+    message: Avoid assigning to innerHTML. Use textContent or safe templating to prevent XSS.
+    pattern: $ELEMENT.innerHTML = $VALUE
+
+  - id: javascript-no-eval
+    languages: [javascript]
+    severity: ERROR
+    message: eval executes arbitrary code and is forbidden in this project.
+    pattern: eval($CODE)
+
+  - id: javascript-no-hardcoded-secret
+    languages: [javascript]
+    severity: WARNING
+    message: Possible hardcoded secret. Move secrets to environment variables or a secret manager.
+    pattern-regex: (?i)(api[_-]?key|secret|password)\s*[:=]\s*['"][^'"]{8,}
+
+  - id: node-no-child-process-without-review
+    languages: [javascript]
+    severity: WARNING
+    message: child_process usage requires an explicit security review.
+    pattern-either:
+      - pattern: import $X from 'node:child_process'
+      - pattern: import $X from 'child_process'
+      - pattern: require('child_process')
