@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Safe Notes</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Secure course project</p>
+        <h1>Safe Notes</h1>
+        <p>Мини-сервис для заметок с валидацией, безопасным выводом и воспроизводимым запуском.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="new-note-title">
+        <h2 id="new-note-title">Новая заметка</h2>
+        <form id="note-form" class="note-form">
+          <label>
+            Заголовок
+            <input name="title" maxlength="80" required placeholder="Например: подготовить доклад">
+          </label>
+          <label>
+            Текст
+            <textarea name="body" maxlength="1000" required placeholder="Кратко опишите задачу"></textarea>
+          </label>
+          <label>
+            Цвет
+            <select name="color">
+              <option value="blue">Синий</option>
+              <option value="green">Зеленый</option>
+              <option value="yellow">Желтый</option>
+              <option value="red">Красный</option>
+              <option value="purple">Фиолетовый</option>
+              <option value="gray">Серый</option>
+            </select>
+          </label>
+          <button type="submit">Добавить</button>
+        </form>
+        <p id="message" role="status" class="message"></p>
+      </section>
+
+      <section class="toolbar" aria-label="Фильтр заметок">
+        <button data-filter="all" class="active">Все</button>
+        <button data-filter="open">Активные</button>
+        <button data-filter="done">Готовые</button>
+      </section>
+
+      <section id="notes" class="notes" aria-live="polite"></section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
